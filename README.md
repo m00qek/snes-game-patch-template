@@ -1,9 +1,9 @@
-snes-game-patch-template
+# SNES game patch template
 ---
 ## Using this template
 
 Fork this repo, go to the `Makefile` and edit the variable in the 
-`CUSTOM VARIABLES` header accordingly. Also double check the links in the bottom
+`CUSTOM VARIABLES` header accordingly. Also double check the links at the bottom
 of this README file and change them when needed. Make sure you follow the 
 [guide to create a Dropbox App][dropbox-guide] and upload the your personal
 backup ROM of your game. If you don't do this **the Github Actions will not
@@ -45,14 +45,14 @@ To build locally you will need [Docker][docker] and [make][make]. On the root
 directory of this repo run
 
 ```bash
-$> make prepare && make rom ORIGINAL_ROM=/path/to/your/orignal/backup/rom.sfc
+$ make prepare && make rom ORIGINAL_ROM=/path/to/your/orignal/backup/rom.sfc
 ```
 
 which will create a playable ROM on `./build/release/`. If you want instead to
 create a patch file, just run:
 
 ```bash
-$> make prepare && make patch ORIGINAL_ROM=/path/to/your/orignal/backup/rom.sfc
+$ make prepare && make patch ORIGINAL_ROM=/path/to/your/orignal/backup/rom.sfc
 ```
 
 again, a patch file will be created at `./build/release/`. 
@@ -61,7 +61,7 @@ Also if you are editing the source code it is probably a good idea to rebuild
 the ROM every time you change something. That can be achieved with
 
 ```bash
-$> make prepare && make watch ORIGINAL_ROM=/path/to/your/orignal/backup/rom.sfc
+$ make prepare && make watch ORIGINAL_ROM=/path/to/your/orignal/backup/rom.sfc
 ```
 ## Releasing
 

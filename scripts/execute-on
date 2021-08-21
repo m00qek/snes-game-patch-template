@@ -1,10 +1,26 @@
 #!/bin/sh
 
+if [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]] ; then
+  cat <<EOF
+Execute commands inside a docker image, mapping the current directory to /data
+inside the container.
+
+Usage:
+  execute-on <tag> <command> <args>...
+
+Examples:
+  execute-on debian:latest echo "Hello world!"
+  execute-on debian:latest cat /etc/os-release
+EOF
+
+  exit 0
+fi
+
 docker run \
   --interactive \
   --tty \
   --rm \
-  --mount "type=bind,src=$(pwd),dst=/project" \
-  --workdir /project \
+  --mount "type=bind,src=$(pwd),dst=/data" \
+  --workdir /data \
   --user "$(id -u):$(id -g)" \
   $@

@@ -1,15 +1,39 @@
-#!/bin/sh
+#!/usr/bin/env python3
 
-ORIGINAL_ROM="$1"
-OUTPUT="$2"
-DROPBOX_TOKEN="$3"
+"""Downloads or copies <original-rom> to <output>. 
 
-if [ -n "${DROPBOX_TOKEN}" ]; then
-  echo 1
-  curl -X POST https://content.dropboxapi.com/2/files/download \
-    --header "Authorization: Bearer ${DROPBOX_TOKEN}" \
-    --header "Dropbox-API-Arg: {\"path\": \"/${ORIGINAL_ROM}\"}" \
-    --output ${OUTPUT}
-else
-  cp ${ORIGINAL_ROM} ${OUTPUT}
-fi
+If a <token> is passed, it will use it to download a file in Dropbox named 
+<original-rom>. If not, it will locally copy <original-rom> to <output>.
+
+Usage:
+  download-game-backup <original-rom> --output <output> [--token <token>]
+
+Options:
+  --token <token>    Dropbox token.
+  --output <output>  Destination filename.
+  -h | --help        Show this usage message.
+"""
+from docopt import docopt
+from requests import post
+from json import dumps
+from shutil import copyfile
+
+def download(token, path, output):
+    response = post('https://content.dropboxapi.com/2/files/download',
+                    headers = {'Authorization': f'Bearer {token}',
+                               'Dropbox-API-Arg': dumps({'path': '/' + path})})
+
+    with open(output, "wb") as f:
+        f.write(response.content)
+
+
+
+if __name__ == '__main__':
+    arguments = docopt(__doc__, version='download-game-backup 1.0')
+
+    token = arguments["--token"]
+    if token:
+        download(token, arguments["<original-rom>"], arguments["--output"])
+    else:
+        copyfile(arguments["<original-rom>"], arguments["--output"])
+

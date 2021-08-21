@@ -33,7 +33,7 @@ thought authenticated HTTP requests to users custom Dropbox Apps.
 
 4. Go to your [Dropbox file vault][files]
    - 4.1) Enter the folder `Apps`
-   - 4.2) Enter the folder with the same name as the app you just created
+   - 4.2) Enter the folder with the same name you used in `1.3`
    - 4.3) Upload you backup ROM. It is essential that the name of the file is
      the same as you configured in the variable `GAME` in the 
      [Makefile][makefile] plus the extension `.sfc`. For example, if the `GAME`
@@ -47,6 +47,8 @@ thought authenticated HTTP requests to users custom Dropbox Apps.
    - 5.4) Name it `DROPBOX_TOKEN`
    - 5.5) On `Value` paste the token generated on step `2.2`
    - 5.6) Click on `Add secret`
+
+Now the Github Actions have everything that they need to run.
 
 [dropbox]: https://www.dropbox.com/
 [create-app]: https://www.dropbox.com/developers/apps/create
