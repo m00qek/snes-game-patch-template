@@ -13,7 +13,7 @@ To release a new version, first make sure your local main branch is sync'd with
 the main branch on Github:
 
 ```bash
-git checkout master
+git checkout main
 git pull
 ```
 
