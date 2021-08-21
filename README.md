@@ -72,7 +72,7 @@ text of the release on `Releases` page. For more details please read the
 <!-- replace m00qek/snes-game-patch-template with your USER and REPO -->
 [latest]: https://github.com/m00qek/snes-game-patch-template/releases/latest
 
-[dropbox-guide]: ./docs/template/creating-a-dropbox-app.md
+[dropbox-guide]: ./docs/template/making-game-available-to-ci.md
 [the-last-super]: https://drludos.itch.io/the-last-super
 [flips]: https://github.com/Alcaro/Flips
 [retroarch]: https://www.retroarch.com/index.php

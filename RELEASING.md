@@ -26,4 +26,4 @@ The `make tag-and-release` command creates a git tag with the project's current
 version and pushes it to Github. This will trigger a Github Action that
 automatically generates a patch an make it available on the `Releases` page.
 
-[dropbox-guide]: ./docs/template/creating-a-dropbox-app.md
+[dropbox-guide]: ./docs/template/making-game-available-to-ci.md
