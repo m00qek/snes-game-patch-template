@@ -79,3 +79,4 @@ text of the release on `Releases` page. For more details please read the
 [docker]: https://www.docker.com/get-started
 [make]: https://www.gnu.org/software/make/
 [releasing]: ./RELEASING.md
+testing
