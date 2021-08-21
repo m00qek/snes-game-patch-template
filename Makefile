@@ -1,10 +1,12 @@
-EXECUTE=./scripts/execute-on m00qek/snes-game-patcher:alpine
-DEV_VERSION = DEV-0.0.0
-VERSION = $(DEV_VERSION)
+############################### CUSTOM VARIABLES ###############################
 
 # the name of the game being patched
 GAME = TheLastSuper
 
+################################################################################EXECUTE=./scripts/execute-on m00qek/snes-game-patcher:alpine
+
+DEV_VERSION = DEV-0.0.0
+VERSION = $(DEV_VERSION)
 ORIGINAL_ROM = $(GAME).sfc
 
 prepare:
@@ -38,7 +40,7 @@ patch: rom
 		./build/release/$(GAME)-patch.bps
 
 watch:
-	@echo 'Assembling modified game when any file on "src/" changes...'
+	@echo 'Assembling custom game when any file on "src/" changes...'
 	@echo
 	@$(EXECUTE) bash -c \
 		'find src/ | entr make EXECUTE="" ORIGINAL_ROM="$(ORIGINAL_ROM)" make rom'

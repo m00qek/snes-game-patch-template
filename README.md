@@ -67,10 +67,10 @@ $> make prepare && make watch ORIGINAL_ROM=/path/to/your/orignal/backup/rom.sfc
 
 Everything is automated by Github Actions, the only manual step is to edit the
 text of the release on `Releases` page. For more details please read the 
-[releasing][releasing] manual.
+[releasing manual][releasing].
 
 <!-- replace m00qek/snes-game-patch-template with your USER and REPO -->
-[latest]: https://github.com/m00qek/wide-snes/releases/latest
+[latest]: https://github.com/m00qek/snes-game-patch-template/releases/latest
 
 [dropbox-guide]: ./docs/template/creating-a-dropbox-app.md
 [the-last-super]: https://drludos.itch.io/the-last-super
